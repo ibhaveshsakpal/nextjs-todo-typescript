@@ -1,9 +1,9 @@
-import mongoose, { mongo } from "mongoose";
+import mongoose from "mongoose";
 
 let isConnected = false;
 
 export const ConnectDB = async () => {
-  let MONGO_URI = process.env.MONGO_URI;
+  let MONGO_URI = process.env.MONGO_URI || "";
   if (isConnected) {
     console.log("MongoDB is already running!");
     return;
@@ -20,7 +20,7 @@ export const ConnectDB = async () => {
 
     isConnected = true;
     console.log("MongoDB is connected!");
-  } catch (error) {
+  } catch (error: any) {
     console.log(error);
   }
 };

@@ -3,7 +3,7 @@ import React from "react";
 
 const Navbar = () => {
   return (
-    <nav className="bg-gradient-to-tl from-cyan-500 to-cyan-800 text-white">
+    <nav className="bg-gradient-to-tl from-cyan-700 to-cyan-900 text-white">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <Link
           href="/"

@@ -29,27 +29,27 @@ const TaskPage = () => {
 
   return (
     <div>
-      {taskData ? (
+      {taskData && taskData.task ? (
         <div className="p-5">
           <h1 className="text-3xl pb-3">Task Details </h1>
           <hr />
 
           <div className="flex">
             <label className="font-bold text-lg">Task Description:</label>
-            <h3 className="text-lg ml-2">{taskData?.task}</h3>
+            <h3 className="text-lg ml-2">{taskData.task}</h3>
           </div>
 
           <div className="flex">
             <label className="font-bold text-lg">Status:</label>
             <h3 className="text-lg ml-2">
-              {taskData?.isCompleted ? "Completed" : "Incomplete"}
+              {taskData.isCompleted ? "Completed" : "Incomplete"}
             </h3>
           </div>
 
           <div className="flex">
             <label className="font-bold text-lg">Created at:</label>
             <h3 className="text-lg ml-2">
-              {new Date(taskData?.created_at).toDateString()}
+              {new Date(taskData.created_at!).toDateString()}
             </h3>
           </div>
         </div>

@@ -9,11 +9,13 @@ export default function Home() {
   const [taskData, setTaskData] = useState<TaskTypes[]>([]);
   const [editingIndex, setEditingIndex] = useState<number | null>();
   const [editText, setEditText] = useState<string | null>();
+  const [taskCount, setTaskCount] = useState<number>();
 
   const fetchTasks = async () => {
     const data = await fetch(`/api/task`);
     const response = await data.json();
     if (response?.data) {
+      setTaskCount(response?.data.length);
       setTaskData(response?.data);
     }
   };
@@ -124,6 +126,11 @@ export default function Home() {
         </div>
       </form>
       <div className="m-5">
+        {taskCount! > 0 && (
+          <div className="flex justify-end">
+            <span className="text-sm">Task Count: {taskCount}</span>
+          </div>
+        )}
         {taskData.length > 0 ? (
           taskData.map((data, index) => (
             <div

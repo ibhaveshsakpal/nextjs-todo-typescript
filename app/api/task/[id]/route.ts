@@ -29,7 +29,7 @@ export const PATCH = async (req: any, { params }: any) => {
   try {
     await ConnectDB();
 
-    const updatedFields: TaskTypes = {};
+    const updatedFields = {} as TaskTypes;
 
     if (isCompleted !== undefined) {
       updatedFields.isCompleted = isCompleted;

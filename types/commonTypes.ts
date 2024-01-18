@@ -1,8 +1,8 @@
 export type TaskTypes = {
-  _id: string;
+  _id?: string;
   task: string;
   isCompleted: boolean;
-  created_at: string;
+  created_at?: string;
 };
 
 export type ResponseMessageTypes = {
